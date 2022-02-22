@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>IBB-NLP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <img src="https://i.ibb.co/crvCmWV/Ibb-amblem.png">
+    <br>
+    <form action="nlpresult" method="post">
+        <br>
+        <input type="text" placeholder="Lütfen kelime giriniz" name="name_input">
+        <br>
+        <input type="submit" value="NLP Submit" id="greet"><input type="reset" value="Clear Text" id="clear_text">
+        <br>
+        {% for message in get_flashed_messages() %}
+             <p>{{ message }}</p>
+         {% endfor %}
+    </form>
+</body>
+</html>
